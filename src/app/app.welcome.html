@@ -1,0 +1,121 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <a class="navbar-brand" style="color:white;">New here?</a>     <a href ="main-page/main-page.component.html"  target="_blank" >jjjj</a>
+   
+   <a href="main-page/main-page.component.html">Новая страница</a>
+   <a class="nav-link"  style="color:white;" (click)="onOpenModal(null!, 'add')">SignUp <!--use a non-null assertion.-->
+    
+    <span class="sr-only">(current)</span></a>
+  <div class="modal fade" id="addSearcherModal" tabindex="-1" role="dialog" aria-labelledby="addSearcherModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="addSearcherModalLabel">Create your profile</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+         </div>
+         <div class="modal-body">
+            <form #addForm="ngForm" (ngSubmit)="onAddSearcher(addForm)">
+            <div class="form-group">
+               <label for="name">Name</label>
+               <input type="text" ngModel name="name" class="form-control" id="name" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+              <label for="passsword">Password</label>
+              <input type="password" ngModel name="password" class="form-control" id="password" placeholder="Password" required>
+           </div>
+            <div class="form-group">
+               <label for="email">Email Address</label>
+               <input type="email" ngModel name="email" class="form-control" id="email" placeholder="Email" required>
+            </div>
+             <label for="email">Gender: </label>
+            <div class="form-group">
+             
+              <div class="form-check form-check-inline mb-0 me-4">
+                <input type="radio" ngModel name="gender" class="form-control" id="gender" placeholder="Gender" required
+                  value="Female" />
+                <label class="form-check-label" for="femaleGender">Female</label>
+              </div>
+
+              <div class="form-check form-check-inline mb-0 me-4">
+                <input type="radio" ngModel name="gender" class="form-control" id="gender" placeholder="Gender" required
+                  value="Male" />
+                <label class="form-check-label" for="maleGender">Male</label>
+              </div>
+
+              <div class="form-check form-check-inline mb-0">
+                <input type="radio" ngModel name="gender" class="form-control" id="gender" placeholder="Gender" required
+                  value="Other" />
+                <label class="form-check-label" for="otherGender">Other</label>
+              </div>
+               
+            <div class="form-group">
+               <label for="phone">Phone</label>
+               <input type="text" ngModel name="phone" class="form-control" id="phone" placeholder="Phone" required>
+            </div>
+            <div class="form-group">
+               <label for="phone">Image URL</label>
+               <input type="text" ngModel name="imageURL" class="form-control" id="imageURL" placeholder="Image URL" required>
+            </div>
+            <div class="modal-footer">
+               <button type="button"  class="btn btn-secondary" id="add-searcher-form"
+                data-dismiss="modal">Close</button>
+               
+              
+
+            <button  [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Save changes</button>
+            
+            </div>
+            
+            </div>
+            </form>
+         </div>
+      </div>
+    </div>
+    </div>
+</nav>
+ <div class="container" id="main-container">
+
+   <section class="vh-100">
+      <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+          <div class="col-md-8 col-lg-7 col-xl-6">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+              class="img-fluid" alt="Phone image">
+          </div>
+          <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+            <form>
+               <h2>Or experienced?</h2>
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="form1Example13" class="form-control form-control-lg" />
+                <label class="form-label" for="form1Example13">Email address</label>
+              </div>
+    
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="form1Example23" class="form-control form-control-lg" />
+                <label class="form-label" for="form1Example23">Password</label>
+              </div>
+    
+              <div class="d-flex justify-content-around align-items-center mb-4">
+                <!-- Checkbox -->
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                  <label class="form-check-label" for="form1Example3"> Remember me </label>
+                </div>
+              
+              </div>
+    
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+    
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
