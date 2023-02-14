@@ -23,9 +23,9 @@
    <div *ngFor="let searcher of searchers" class="col-md-6 col-xl-3">
       <div class="card m-b-30">
          <div class="card-body row">
-            <div *ngIf="imageList">
-                <img [src]="imageURL" class="img-fluid" width="350px" height="250px">
-           </div>         
+            <div class="col-6">
+              <a href=""><img src="{{seracher?.imageURL}}" class="img-fluid rounded-circle w-60"></a>
+           </div>      
             <div class="col-6 card-title align-self-center mb-0">
                <h5>{{searcher?.name}}</h5>
                <p class="m-0">{{searcher?.gender}}</p>
@@ -57,24 +57,11 @@
            </button>
         </div>
         <div class="modal-body">
-         <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
-            <div class="text-center">
-              <img [src]="imgSrc" width="350px" height="250px" (click)="fileUploader.click()">
+          <form #addForm="ngForm" (ngSubmit)="onAddSearcher(addForm)" >
+           <div class="form-group">
+             <label for="phone">Image URL</label>
+             <input type="text" ngModel name="imageUrl" class="form-control" id="imageUrl" placeholder="Image URL" required>
             </div>
-            <div class="form-group">
-              <label>Select file to upload</label>
-              <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl"
-                (change)="showPreview($event)">
-              <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.['required']">This field is required.
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-               <button type="submit" hidden="" id="add-img-form"></button>
-              </div>
-            </div>
-          </form>   
-           <form #addForm="ngForm" (ngSubmit)="onAddSearcher(addForm)" >
             <div>
               <label for="name">Name</label>
               <input type="text" [(ngModel)]="searcher.name" name="name" class="form-control" id="name" placeholder="Name" required>
@@ -114,7 +101,7 @@
             </div>
             <div class="modal-footer">
               <button type="button"  class="btn btn-secondary" id="add-searcher-form"data-dismiss="modal">Close</button>
-              <button  [disabled]="addForm.invalid && formControls.imageUrl.valid || formControls.imageUrl.pristine" type="submit" class="btn btn-primary" #postImg>Save changes</button>
+              <button  [disabled]="addForm.invalid type="submit" class="btn btn-primary">Save changes</button>
            </div>
          </form>
         </div>
