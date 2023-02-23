@@ -7,7 +7,7 @@ import { SearcherService } from './searcher.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.welcome.html',
+  templateUrl: './app.componenet.html',
   styleUrls: ['./component.css',],
 
 })
