@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <ul class="navbar-nav mr-auto" routerLinkActive="active">
+    <li class="nav-item">
+      <a href="/home" class="nav-link" routerLink="home">Домой </a>
+    </li>
+    <li class="nav-item" *ngIf="showAdminBoard">
+      <a href="/admin" class="nav-link" routerLink="admin">Список пользователей</a>
+    </li>
+  </ul>
+  <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+    <li class="nav-item">
+      <a href="/register" class="nav-link" routerLink="register">Регистрация</a>
+    </li>
+    <li class="nav-item">
+      <a href="/login" class="nav-link" routerLink="login">Авторизация</a>
+    </li>
+  </ul>
+  <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+    <li class="nav-item" >
+      <a href="/profile" class="nav-link"  routerLink="profile">{{ name }}</a>
+    </li>
+    <li class="nav-item">
+      <a href class="nav-link" id="logout" (click)="logout()">Выйти из уч. записи</a>
+    </li>
+  </ul>
+</nav>
+
+ <router-outlet></router-outlet>
+    
+
+ 
